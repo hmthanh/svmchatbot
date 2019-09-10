@@ -1,10 +1,11 @@
-body,html {
-    height: 100%;
+body,
+html {
+  height: 100%;
 }
 
 .chat-container {
-    margin: 0px;
-    padding: px;
+  margin: 0px;
+  padding: px;
 }
 
 .chat-message {
@@ -14,14 +15,14 @@ body,html {
 }
 
 .bot-message {
-    background: green;
-    color: white;
+  background: green;
+  color: white;
 }
 
 .human-message {
-    background:dodgerblue;
-    color: white;
-    margin: 13px 1px;
+  background: dodgerblue;
+  color: white;
+  margin: 13px 1px;
 }
 
 .input {
@@ -30,4 +31,18 @@ body,html {
   height: 60px;
   border: 1px solid rosybrown;
   border-radius: 3px;
+  padding: 10px;
+}
+
+/* .chat-container {
+  overflow: auto;
+  max-height: 80vh
+} */
+
+#footer{
+  display: block;
+}
+
+.clearAll{
+  clear: both;
 }

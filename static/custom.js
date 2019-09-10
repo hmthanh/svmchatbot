@@ -1,6 +1,6 @@
 // Initialise Pusher
-const pusher = new Pusher('<YOUR_PUSHER_KEY_HERE>', {
-    cluster: '<YOUR_PUSHER_CLUSTER_HERE>',
+const pusher = new Pusher('a9216b808f46f96d98a5', {
+    cluster: 'ap1',
     encrypted: true
 });
 
@@ -9,7 +9,7 @@ const channel = pusher.subscribe('movie_bot');
 
 // bind new_message event to movie_bot channel
 channel.bind('new_message', function(data) {
-    console.log(data)
+    // console.log(data)
     // Append human message
     $('.chat-container').append(`
         <div class="chat-message col-md-5 human-message">
@@ -35,7 +35,7 @@ $(function() {
         
         function handle_response(data) {
             // append the bot repsonse to the div
-            console.log(data.message)
+            // console.log(data.message)
             $('.chat-container').append(`
                 <div class="chat-message col-md-5 offset-md-7 bot-message">
                     ${data.message}
@@ -43,6 +43,7 @@ $(function() {
             `)
             // remove the loading indicator
             $( "#loading" ).remove();
+            $("#footer")[0].scrollIntoView();
         }
     }
 
@@ -65,12 +66,15 @@ $(function() {
             <div class="chat-message text-center col-md-2 offset-md-10 bot-message" id="loading">
                 <b>...</b>
             </div>
-        `)
+        `);
         
         // clear the text input 
-        $('#input_message').val('')
+        $('#input_message').val('');
+        $('#input_message').focus();
+        $("#footer")[0].scrollIntoView();
         
         // send the message
-        submit_message(input_message)
+        submit_message(input_message);
+        $("#footer")[0].scrollIntoView();
     });
 });

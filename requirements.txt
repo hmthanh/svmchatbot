@@ -8,6 +8,7 @@ cryptography==2.7
 cycler==0.10.0
 Cython==0.29.13
 dialogflow==0.4.0
+enum34==1.1.6
 Flask==1.0.2
 google-api-core==1.14.2
 google-auth==1.6.3
@@ -23,9 +24,9 @@ MarkupSafe==1.1.1
 matplotlib==3.1.1
 ndg-httpsclient==0.5.1
 numpy==1.17.2
-object-detection==0.1
 pandas==0.25.1
 Pillow==6.1.0
+prettytensor==0.7.4
 protobuf==3.9.1
 pusher==2.0.1
 pyasn1==0.4.7

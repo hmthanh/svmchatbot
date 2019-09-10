@@ -6,7 +6,7 @@ import json
 import pusher
 from text_predict.svm import TextPredict
 
-application = Flask(__name__)
+app = Flask(__name__)
 
 # initialize Pusher
 pusher_client = pusher.Pusher(
@@ -16,11 +16,11 @@ pusher_client = pusher.Pusher(
     cluster=os.getenv('PUSHER_CLUSTER'),
     ssl=True)
 
-@application.route('/')
+@app.route('/')
 def index():
     return render_template('index.html')
 
-@application.route('/get_movie_detail', methods=['POST'])
+@app.route('/get_movie_detail', methods=['POST'])
 def get_movie_detail():
     data = request.get_json(silent=True)
     
@@ -59,7 +59,7 @@ def detect_intent_texts(project_id, session_id, text, language_code):
 
 predict = TextPredict()
 
-@application.route('/send_message', methods=['POST'])
+@app.route('/send_message', methods=['POST'])
 def send_message():
     try:
         socketId = request.form['socketId']
@@ -86,4 +86,4 @@ def send_message():
 
 # run Flask app
 if __name__ == "__main__":
-    application.run()
+    app.run()

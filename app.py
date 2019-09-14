@@ -5,10 +5,8 @@ import requests
 import json
 import pusher
 from text_predict.svm import TextPredict
-from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
-run_with_ngrok(app)
 
 # initialize Pusher
 pusher_client = pusher.Pusher(

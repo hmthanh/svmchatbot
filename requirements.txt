@@ -49,5 +49,5 @@ sklearn==0.0
 sklearn-crfsuite==0.3.6
 tabulate==0.8.3
 tqdm==4.35.0
-urllib3==1.22
+urllib3==1.26.5
 Werkzeug==0.15.6
